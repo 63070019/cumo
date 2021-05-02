@@ -14,7 +14,7 @@
                     background-image:url("https://img.freepik.com/free-photo/color-concrete-wall-background_1323-256.jpg?size=626&ext=jpg");
                     background-repeat: repeat;
                     background-size: cover;
-                    font-family: 'Kanit', sans-serif;
+                    
                 }
                 button{
                     cursor: pointer;
@@ -23,7 +23,11 @@
                     display: block;
                     position: absolute;
                     text-align: center;
+                    font-family: 'Kanit', sans-serif;
                     
+                }
+                .heboo{
+                    font-family: 'Heebo', sans-serif;
                 }
                 h1{
                     text-align: center;
@@ -40,8 +44,8 @@
                 }
                 a{
                     text-align: left;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 30px;
+                    font-family: 'Kanit', sans-serif;
+                    font-size: 20px;
                     color: azure;
                     position: relative;
                 }
@@ -57,6 +61,7 @@
                 div.link{
                     text-align: right;
                     font-family: 'Heebo', sans-serif;
+                    /* font-size: 50px; */
                 }
                 .zoom {
                 display: block;
@@ -91,26 +96,29 @@
     </head>
         <body>
             <link href='https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin' rel='stylesheet' type='text/css'>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Heebo&family=Kanit:wght@300&display=swap" rel="stylesheet">
             <div class = 'menu'>
-                <link rel="preconnect" href="https://fonts.gstatic.com">
-                <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Heebo&family=Kanit:wght@300&display=swap" rel="stylesheet">
-                <h1 id="link">Department</h1>
-                <h2>Projectนี้จัดทำขึ้นเพื่อให้เราสามารถจัดการร้านสะดวกซื้อได้ในทั้งฝั่งลูกค้าและผู้จัดการ</h2>
+                <div class="heebo">
+                    <h1 id="link">Department</h1>
+                </div>
+                <!-- <h1 id="link">Department</h1> -->
+                <h2>Project นี้จัดทำขึ้นเพื่อให้เราสามารถจัดการร้านสะดวกซื้อได้ในทั้งฝั่งลูกค้าและผู้จัดการ</h2>
                 <h2>นี่คือหน้าตาของแอพที่เราเขียนขึ้นมา</h2>
                 <div class="zoom">
                     <img src="https://cdn.discordapp.com/attachments/381402365871521803/837980870853132288/unknown.png">
                 </div>
                 
                 <h2>โดยโค้ดนี่สามารถจัดการระบบภายในร้านค้าได้</h2>
-                <h2>การเพิ่ม / ถอนสินค้า</h2>
-                <h2>ค้นหาสินค้า</h2>
-                <h2>เเสดงรายการสินค้าที่มีอยู่ในร้าน</h2>
-                <h2>คำนวณบิล</h2>
+                <a href="#add">การเพิ่ม / ถอนสินค้า</a><br><br>
+                <a href="#search">ค้นหาสินค้า</a><br><br>
+                <a href="#dis">เเสดงรายการสินค้าที่มีอยู่ในร้าน</a><br><br>
+                <a href="#bill">คำนวณบิล</a>
                 <h2>คลิปสาธิตการใช้งาน</h2>
                 <iframe width="420" height="315"
                 src="https://www.youtube-nocookie.com/embed/w1bdQjjQFIs?">
                 </iframe>
-                <h2>เมื่อเริ่มต้นมาเราจะต้องพิม 2 เพื่อที่จะเข้า mode manager เพื่อที่จะเพิ่มสินค้าเข้าไปในระบบก่อน</h2>
+                <h2 id="add">เมื่อเริ่มต้นมาเราจะต้องพิม 2 เพื่อที่จะเข้า mode manager เพื่อที่จะเพิ่มสินค้าเข้าไปในระบบก่อน</h2>
                 <img src="https://cdn.discordapp.com/attachments/381402365871521803/837984985663143972/unknown.png">
                 <h2>เพิ่มเลข 2 เพื่อเพิ่มสินค้าจะมีข้อความถามถึงรายละเอียด</h2>
                 <img src="https://cdn.discordapp.com/attachments/381402365871521803/837986656047988756/unknown.png">
@@ -119,14 +127,18 @@
                 <h2>ในตัวอย่างนี้เราจะเลือกเเก้ไขสินค้า เมื่อเลือกเเล้วจะเเสดงรายการสินค้าที่มีอยู่ขณะนี้ โดยเราสามารถเลือกได้ว่าจะเเก้ไขในหัวข้อใด</h2>
                 <img src="https://cdn.discordapp.com/attachments/381402365871521803/837988098175533076/unknown.png">
                 <h2>ในตัวอย่างนี้เราจะเเก้ชื่อสินค้าใหม่</h2>
-                <img src="https://cdn.discordapp.com/attachments/381402365871521803/837988785286283314/unknown.png">
+                <img src="https://cdn.discordapp.com/attachments/381402365871521803/837988785286283314/unknown.png"><br><br>
+                <a id="dis">ในตัวอย่างนี้ เราจะมาสาธิตการเเสดงรายการสินค้าที่มีทั้งหมดในร้าน</a>
+                <h2>เมื่อเราอยู่ในโหมด Manager เราสามารถพิม 1 เพื่อที่จะดูสินค้าทั้งหมดที่มีอยู่ในร้าน</h2>
+                <img src="https://cdn.discordapp.com/attachments/381402365871521803/838327263987630110/unknown.png">
+                
                 <h2>ในตัวอย่างนี้เราจะสาธิตวิธีการค้นหาสินค้าภายในร้าน</h2>
-                <img src="https://cdn.discordapp.com/attachments/381402365871521803/837989459453804554/unknown.png">
-                <h2>ในตัวอย่างนี้เราจะค้นหาสินค้า โดยพิม ID ของสินค้าที่เราต้องการค้นหา</h2>
+                <img src="https://cdn.discordapp.com/attachments/381402365871521803/837989459453804554/unknown.png"><br><br>
+                <a id="search">ในตัวอย่างนี้เราจะค้นหาสินค้า โดยพิม ID ของสินค้าที่เราต้องการค้นหา</a><br><br>
                 <img src="https://cdn.discordapp.com/attachments/381402365871521803/837990064838410250/unknown.png">
                 <h2>ในตัวอย่างต่อไปนี้เราจะมาในส่วนของลูกค้า(guest)</h2>
-                <img src="https://cdn.discordapp.com/attachments/381402365871521803/837990936889262100/unknown.png">
-                <h2>โดยในหน้าลูกค้า จะมีข้อความเเสดงสินค้าทั้งหมดที่มีอยู่ในร้าน</h2>
+                <img src="https://cdn.discordapp.com/attachments/381402365871521803/837990936889262100/unknown.png"><br><br>
+                <a id="bill">โดยในหน้าลูกค้า จะมีข้อความเเสดงสินค้าทั้งหมดที่มีอยู่ในร้าน</h2>
                 <h2>โดยเราจะต้องเลือกสินค้าที่เราต้องการจะซื้อโดยพิม 1 เพื่อเพิ่มสินค้าไปในตะกร้า เมื่อพิมเเล้วจะมีจอความถามถึง No ของสินค้าที่เราต้องการจะเพิ่ม
                     เเละจำนวนที่เราต้องการ
                 </h2>
@@ -605,7 +617,7 @@
                             }
                         }
                         
-                </pre>
+                </pre><br>
                 <div class="link">
                     <a href="#link">Jump Up</a>
                 </div>
