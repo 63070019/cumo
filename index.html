@@ -152,15 +152,15 @@
                 <h2>ระบบจะเข้าสู่หน้าจ่ายตังพร้อมบอกลายละเอียดของสินค้าที่เราซื้อพร้อมราคาทั้งหมด</h2>
                 <h1>Source code</h1>
                 <pre>
-                    #include &lt;stdio.h&gt;
-                        #include &lt;ctype.h&gt;
-                        #include &lt;string.h&gt;
-                        #include &lt;stdbool.h&gt;
+                    #include <stdio.h>
+                        #include <ctype.h>
+                        #include <string.h>
+                        #include <stdbool.h>
                         
                         
                         int count_item = 0;
-
-
+                        
+                        
                         struct goods
                         {
                             int no;
@@ -171,13 +171,13 @@
                             int quantity;
                             int dis_count;
                         };
-
-
-
-
-
+                        
+                        
+                        
+                        
+                        
                         int main_menu(struct goods item[]);
-
+                        
                         void manager_menu(struct goods item[]);
                         void check_item();
                         void show_item(struct goods item[]);
@@ -187,13 +187,13 @@
                         void edit_item(struct goods item[]);
                         void delete_item(struct goods item[]);
                         void search_item(struct goods item[]);
-
-
-
-
-
+                        
+                        
+                        
+                        
+                        
                         void guest_menu(struct goods item[]);
-
+                        
                         void select_item(struct goods item[], double result);
                         void show_item_buy(struct goods item[]);
                         void add_item(struct goods item[], double result);
@@ -201,16 +201,16 @@
                         void check_discout(struct goods item[]);
                         void bill(struct goods item[], double result);
                         void reset_discount(struct goods item[]);
-
-
-
+                        
+                        
+                        
                         int main()
                         { 
                             struct goods item[count_item];
                             main_menu(item);
                         }
-
-
+                        
+                        
                         int main_menu(struct goods item[])      //หน้าเมนูหลัก//
                         {
                             int state;
@@ -232,8 +232,8 @@
                                 manager_menu(item);
                             }
                         }
-
-
+                        
+                        
                         void manager_menu(struct goods item[])  //หน้าเมนูของผู้จัดการ//
                         {
                             int state;
@@ -243,8 +243,8 @@
                             printf("\t3.Edit products\n");
                             printf("\t4.Search product\n");
                             printf("\t0.Go back\n");
-
-
+                        
+                        
                             scanf("%d", &state);
                             if(state == 1){
                                 show_item(item);
@@ -262,11 +262,11 @@
                                 main_menu(item);
                             }
                             
-
+                        
                         }
-
-
-
+                        
+                        
+                        
                         void add_products(struct goods item[])  //function เพิ่มสินค้า//
                         {
                             int i;
@@ -278,25 +278,25 @@
                             for(int j=count_item; j < count_item+get; j++){
                                 printf("\n\titem No.%d", j+1);
                                 item[j].no = j+1;
-
+                        
                                 printf("\n\tID:\t");
                                 scanf("%s", t);
                                 stpcpy(item[j].id, t);
-
+                        
                                 printf("\tName:\t");
                                 scanf(" %[^\n]s", t);
                                 stpcpy(item[j].name, t);
-
+                        
                                 printf("\tType:\t");
                                 scanf("%s", t);
                                 stpcpy(item[j].type, t);
-
+                        
                                 printf("\tPrice:\t");
                                 scanf("%lf", &item[j].price);
-
+                        
                                 printf("\tQuantity:\t");
                                 scanf("%d", &item[j].quantity);
-
+                        
                             }
                             count_item += get;
                             printf("\n\n\t\t\t\tCompleted !!!!!\n\n");
@@ -307,8 +307,8 @@
                             }
                             
                         }
-
-
+                        
+                        
                         void check_item()   //function เช็คว่ามีสินค้าใน stock หรือไหม//
                         {
                             if(count_item == 0){
@@ -316,8 +316,8 @@
                                 printf("\n\n\t\t\t\t\tNot found\n\n");
                             }
                         }
-
-
+                        
+                        
                         void stock(struct goods item[]) //function stock//
                         {
                             check_item();
@@ -333,8 +333,8 @@
                                 printf("%d\n", item[j].quantity);
                             }
                         }
-
-
+                        
+                        
                         void show_item(struct goods item[])     //function แสดงสินค้า//
                         {
                             int i;
@@ -345,8 +345,8 @@
                                 manager_menu(item);
                             }
                         }
-
-
+                        
+                        
                         void edit_item(struct goods item[])     //function เมนูแก้ไขสินค้า//
                         {
                             int state;
@@ -355,7 +355,7 @@
                             printf("\n\n\n\t1.Edit product\n");
                             printf("\t2.Remove product\n");
                             printf("\t0.Go back\n");
-
+                        
                             scanf("%d", &state);
                             if(state == 1){
                                 change(item);
@@ -367,8 +367,8 @@
                                 manager_menu(item);
                             }
                         }
-
-
+                        
+                        
                         void change(struct goods item[])    //function เปลี่ยนของข้อมูลสินค้า//
                         {
                             int num;
@@ -408,7 +408,7 @@
                                 }
                                 else if(state == 5){
                                     printf("\tQuantity:\t");
-                                    scanf("%lf", &item[num-1].quantity);
+                                    scanf("%d", &item[num-1].quantity);
                                 }
                                 else if(state == 0){
                                     break;
@@ -419,8 +419,8 @@
                             }
                             edit_item(item);
                         }
-
-
+                        
+                        
                         void delete_item(struct goods item[])   //function ลบสินค้าออกจาก stock//
                         {
                             int num;
@@ -440,8 +440,8 @@
                             count_item--;
                             edit_item(item);
                         }
-
-
+                        
+                        
                         void search_item(struct goods item[])   //function ค้าหาสินค้าจาก ID//
                         {
                             char n_id[10];
@@ -469,14 +469,14 @@
                                 manager_menu(item);
                             }
                         }
-
-
-
-
-
-
-
-
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         void guest_menu(struct goods item[])    //เมนูของผู้ซื้อสินค้า//
                         {
                             printf("\n\n\t\t\t\t\tWelcome To Shop\n\n\n");
@@ -484,8 +484,8 @@
                             reset_discount(item);
                             select_item(item, result);
                         }
-
-
+                        
+                        
                         void select_item(struct goods item[], double result)    //function เมนูเลือกซื้อสินค้า//
                         {
                             while (true)
@@ -501,26 +501,26 @@
                                     add_item(item, result);
                                 }
                                 else if (state == 2){
-                                reduce_item(item, result);
+                                   reduce_item(item, result);
                                 }
                                 else if (state == 3){
-                                bill(item, result);
+                                   bill(item, result);
                                 }
                             }
                         }
-
-
+                        
+                        
                         void show_item_buy(struct goods item[])     //function แสดงสินค้าที่ซื้อไป//
                         {
-                            printf("\n\n\tNo\tProduct\tQuantity\tPrice\n\n");
+                            printf("\n\n\tNo\tProduct\t\tQuantity\tPrice\n\n");
                             for(int j=0; j < count_item; j++){
                                 if(item[j].dis_count > 0){
-                                    printf("\t%d\t%s\tx%d\t%.2lf\n", item[j].no, item[j].name, item[j].dis_count, item[j].dis_count*item[j].price);
+                                    printf("\t%d\t%s\t\tx%d\t\t%.2lf\n", item[j].no, item[j].name, item[j].dis_count, item[j].dis_count*item[j].price);
                                 }
                             }
                         }
-
-
+                        
+                        
                         void add_item(struct goods item[], double result)   //function เพิ่มสินค้าลงในตะกร้า//
                         {
                             int i;
@@ -548,8 +548,8 @@
                             }
                             select_item(item, result);
                         }
-
-
+                        
+                        
                         void reduce_item(struct goods item[], double result)    //function ลดสินค้าออกจากตะกร้า//
                         {
                             int i;
@@ -579,8 +579,8 @@
                             }
                             select_item(item, result);
                         }
-
-
+                        
+                        
                         void check_discout(struct goods item[])     //function เช็คว่ามีสินค้าในตะกร้าหรือไม่//
                         {
                             int i = 0;
@@ -593,8 +593,8 @@
                                 printf("\n\t\tNot found\n\n");
                             }
                         }
-
-
+                        
+                        
                         void bill(struct goods item[], double result)   //function แสดง bill//
                         {
                             int state;
@@ -606,16 +606,18 @@
                             if(state == 0){
                                 main_menu(item);
                             }
-
+                        
                         }
-
-
+                        
+                        
                         void reset_discount(struct goods item[])    //function reset สินค้าในตะกร้า//
                         {
                             for(int j=0; j < count_item; j++){
                                 item[j].dis_count = 0;
                             }
                         }
+                        
+                        
                         
                 </pre><br>
                 <div class="link">
